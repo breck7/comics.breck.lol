@@ -39,12 +39,6 @@ metaTags
 
 gitButton https://github.com/breck7/podcasts.breck.lol
 
-a Origin Story
- class originStory
- href https://www.youtube.com/watch?v=wAfLJi592Mw
- target _blank
- rel noopener
-
 main
  addClass stage
  section
