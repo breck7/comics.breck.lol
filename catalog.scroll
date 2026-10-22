@@ -1,0 +1,57 @@
+buildConcepts catalog.js catalog.json catalog.tsv catalog.csv
+
+idParser
+ extends abstractIdParser
+
+fileParser
+ extends abstractStringMeasureParser
+
+artistParser
+ extends abstractStringMeasureParser
+
+titleParser
+ extends abstractStringMeasureParser
+
+yearParser
+ extends abstractIntegerMeasureParser
+
+durationParser
+ extends abstractStringMeasureParser
+
+urlParser
+ extends abstractUrlMeasureParser
+
+recordedParser
+ extends abstractStringMeasureParser
+
+id norm-1
+file norm-1.mp4
+artist Norm Macdonald
+title Based on a True Story - Part 1 of 4
+year 2016
+duration 6585
+url https://archive.org/details/norm-macdonald-audiobook-full
+
+id norm-2
+file norm-2.mp4
+artist Norm Macdonald
+title Based on a True Story - Part 2 of 4
+year 2016
+duration 6586
+url https://archive.org/details/norm-macdonald-audiobook-full
+
+id norm-3
+file norm-3.mp4
+artist Norm Macdonald
+title Based on a True Story - Part 3 of 4
+year 2016
+duration 6586
+url https://archive.org/details/norm-macdonald-audiobook-full
+
+id norm-4
+file norm-4.mp4
+artist Norm Macdonald
+title Based on a True Story - Part 4 of 4
+year 2016
+duration 6585
+url https://archive.org/details/norm-macdonald-audiobook-full
