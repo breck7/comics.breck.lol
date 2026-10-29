@@ -18,15 +18,15 @@ gitButtonParser
  string svg <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Source code on GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
  javascript
   get link() {
-    return this.content || "https://github.com/breck7/podcasts.breck.lol"
+    return this.content || "https://github.com/breck7/comics.breck.lol"
   }
 
-title Podcasts of a People
-baseUrl https://podcasts.breck.lol/
-canonicalUrl https://podcasts.breck.lol/
-openGraphImage https://podcasts.breck.lol/og.jpg
+title Comics of a People
+baseUrl https://comics.breck.lol/
+canonicalUrl https://comics.breck.lol/
+openGraphImage https://comics.breck.lol/og.jpg
 favicon favicon.png
-description A pocketful of podcasts and audiobooks. Scroll, shuffle, and listen.
+description A pocketful of comics. Scroll, shuffle, watch, and listen.
 permalink index.html
 buildHtml
 metaTags
@@ -37,17 +37,17 @@ metaTags
 // https://commons.wikimedia.org/wiki/File:UnionEast2.jpg
 // SVG is inline because the installed Scroll compiler has no native SVG element parser.
 
-gitButton https://github.com/breck7/podcasts.breck.lol
+gitButton https://github.com/breck7/comics.breck.lol
 
 main
  addClass stage
  section
   addClass introduction
-  h1 Podcasts of a People
-   https://github.com/breck7/podcasts.breck.lol
+  h1 Comics of a People
+   https://github.com/breck7/comics.breck.lol
  section
   addClass player
-  aria-label iPod podcast player
+  aria-label iPod video player
   div
    addClass ipod
    ipodSvg
@@ -61,8 +61,8 @@ main
      <rect x="1" y="1" width="398" height="648" rx="39" fill="url(#chrome)"/>
      <rect x="5" y="3" width="388" height="640" rx="35" fill="url(#ivory)" stroke="#ffffff" stroke-width="2"/>
      <path d="M28 24Q200 8 370 25" stroke="white" stroke-opacity=".7" stroke-width="3"/>
-     <rect x="45" y="55" width="310" height="262" rx="9" fill="#c1c3b8" stroke="#fff" stroke-width="2"/>
-     <rect x="49" y="59" width="302" height="254" rx="5" fill="#52604b"/>
+     <rect x="25" y="45" width="350" height="272" rx="9" fill="#c1c3b8" stroke="#fff" stroke-width="2"/>
+     <rect x="29" y="49" width="342" height="264" rx="5" fill="#52604b"/>
      <circle cx="200" cy="468" r="116" fill="#d3d4cc" stroke="#fff" stroke-width="2"/>
      <circle cx="200" cy="467" r="112" fill="url(#wheel)" stroke="#e5e5df"/>
      <circle cx="200" cy="467" r="55" fill="#d4d5cc"/>
@@ -75,7 +75,7 @@ main
     addClass screen
     div
      addClass statusbar
-     span Podcasts
+     span Comics
      span
       id repeat-flag
       aria-live polite
@@ -152,11 +152,13 @@ css
  .player { justify-self:end; width:min(360px,100%); }
  .ipod { position:relative; width:100%; aspect-ratio:400 / 650; filter:drop-shadow(10px 30px 28px #171b1955); }
  .shell { display:block; width:100%; height:100%; }
- .screen { position:absolute; left:12.5%; top:9.23%; width:75%; height:38.6%; background:var(--lcd); color:var(--ink); border-radius:4px; box-shadow:inset 1px 3px 8px #26312465; padding:7px 7px 5px; font-family:'Courier New',monospace; display:flex; flex-direction:column; overflow:hidden; }
+ .screen { position:absolute; left:7.25%; top:7.54%; width:85.5%; height:40.6%; background:var(--lcd); color:var(--ink); border-radius:4px; box-shadow:inset 1px 3px 8px #26312465; padding:7px 7px 5px; font-family:'Courier New',monospace; display:flex; flex-direction:column; overflow:hidden; }
  .screen::after { content:''; position:absolute; inset:0; pointer-events:none; opacity:.10; background:repeating-linear-gradient(0deg,transparent,transparent 2px,#475840 3px); }
  .statusbar { display:flex; justify-content:space-between; align-items:center; font-weight:bold; font-size:14px; border-bottom:2px solid var(--ink); padding:0 4px 4px; }
  .statusbar span:last-child { border:1px solid var(--ink); line-height:10px; padding:0 2px; font-size:13px; margin-right:3px; position:relative; }
  .statusbar span:last-child::after { content:''; position:absolute; right:-4px; top:2px; width:2px; height:6px; background:var(--ink); }
+ .screen-video { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#000; display:none; z-index:2; }
+ .screen.video .screen-video { display:block; }
  .songs { flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#526148 #abbc94; padding:3px 0; }
  button { font:inherit; cursor:pointer; -webkit-tap-highlight-color:transparent; }
  .song { width:100%; display:block; text-align:left; border:0; color:inherit; background:transparent; padding:5px 7px; position:relative; line-height:1.1; text-decoration:none; cursor:pointer; }
@@ -212,7 +214,12 @@ script
    const $ = id => document.getElementById(id);
    const list = $('songs');
    const songs = [...list.querySelectorAll('.song')];
-   const audio = new Audio();
+   const audio = document.createElement('video');
+   audio.playsInline = true;
+   audio.className = 'screen-video';
+   audio.onclick = () => audio.pause();
+   document.querySelector('.screen').append(audio);
+   const showVideo = () => document.querySelector('.screen').classList.toggle('video', !audio.paused && /\.(mp4|mov|m4v|webm)$/i.test(songs[current].dataset.file) && audio.videoWidth > 0);
    audio.preload = 'metadata';
    let selected = 0, current = -1, request = 0, pendingSeek = null, autoplayBlocked = false;
    function updateLink() {
@@ -308,8 +315,8 @@ script
    ['loadedmetadata','durationchange','progress','canplay'].forEach(event => audio.addEventListener(event, applySeek));
    audio.addEventListener('seeked', () => { if(pendingSeek !== null && Math.abs(audio.currentTime - pendingSeek) < .5) { pendingSeek = null; updateLink(); } });
    audio.addEventListener('pause', updateLink);
-   ['play','pause','loadedmetadata'].forEach(event => audio.addEventListener(event, render));
-   audio.addEventListener('error', () => { $('now-title').textContent = 'Unable to load episode'; $('now-detail').textContent = 'Check that the audio file is available'; });
+   ['play','pause','loadedmetadata'].forEach(event => audio.addEventListener(event, () => { render(); showVideo(); }));
+   audio.addEventListener('error', () => { $('now-title').textContent = 'Unable to load episode'; $('now-detail').textContent = 'Check that the file is available'; });
    audio.addEventListener('ended', () => { if(repeat === 2) play(current, 0); else if(current < songs.length - 1) play(current + 1); else if(repeat === 1) play(0); else render(); });
    let wheelDelta = 0;
    const wheel = $('wheel');
